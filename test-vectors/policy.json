@@ -1,0 +1,578 @@
+{
+  "generated_by": "scripts/make-vectors.mjs",
+  "vectors": [
+    {
+      "name": "fresh FR pass",
+      "claims": {
+        "schema": "kyb-pass/0",
+        "country": "FR",
+        "eu_vat_valid": true,
+        "decision": "pass",
+        "iban_sepa": true,
+        "name_checked": true,
+        "issued_day": 20750,
+        "expires_day": 20840,
+        "rules_version": "2026-10-24.1"
+      },
+      "policy": {
+        "id": "eu-pass-90d",
+        "countries": [
+          "AT",
+          "BE",
+          "BG",
+          "CY",
+          "CZ",
+          "DE",
+          "DK",
+          "EE",
+          "EL",
+          "ES",
+          "FI",
+          "FR",
+          "HR",
+          "HU",
+          "IE",
+          "IT",
+          "LT",
+          "LU",
+          "LV",
+          "MT",
+          "NL",
+          "PL",
+          "PT",
+          "RO",
+          "SE",
+          "SI",
+          "SK"
+        ],
+        "require_decision": "pass",
+        "require_sepa_iban": false,
+        "max_age_days": 90,
+        "disclose_country": false
+      },
+      "today": 20750,
+      "expected": {
+        "ok": true,
+        "failed": []
+      }
+    },
+    {
+      "name": "last valid day",
+      "claims": {
+        "schema": "kyb-pass/0",
+        "country": "FR",
+        "eu_vat_valid": true,
+        "decision": "pass",
+        "iban_sepa": true,
+        "name_checked": true,
+        "issued_day": 20750,
+        "expires_day": 20840,
+        "rules_version": "2026-10-24.1"
+      },
+      "policy": {
+        "id": "eu-pass-90d",
+        "countries": [
+          "AT",
+          "BE",
+          "BG",
+          "CY",
+          "CZ",
+          "DE",
+          "DK",
+          "EE",
+          "EL",
+          "ES",
+          "FI",
+          "FR",
+          "HR",
+          "HU",
+          "IE",
+          "IT",
+          "LT",
+          "LU",
+          "LV",
+          "MT",
+          "NL",
+          "PL",
+          "PT",
+          "RO",
+          "SE",
+          "SI",
+          "SK"
+        ],
+        "require_decision": "pass",
+        "require_sepa_iban": false,
+        "max_age_days": 90,
+        "disclose_country": false
+      },
+      "today": 20840,
+      "expected": {
+        "ok": true,
+        "failed": []
+      }
+    },
+    {
+      "name": "expired",
+      "claims": {
+        "schema": "kyb-pass/0",
+        "country": "FR",
+        "eu_vat_valid": true,
+        "decision": "pass",
+        "iban_sepa": true,
+        "name_checked": true,
+        "issued_day": 20750,
+        "expires_day": 20840,
+        "rules_version": "2026-10-24.1"
+      },
+      "policy": {
+        "id": "eu-pass-90d",
+        "countries": [
+          "AT",
+          "BE",
+          "BG",
+          "CY",
+          "CZ",
+          "DE",
+          "DK",
+          "EE",
+          "EL",
+          "ES",
+          "FI",
+          "FR",
+          "HR",
+          "HU",
+          "IE",
+          "IT",
+          "LT",
+          "LU",
+          "LV",
+          "MT",
+          "NL",
+          "PL",
+          "PT",
+          "RO",
+          "SE",
+          "SI",
+          "SK"
+        ],
+        "require_decision": "pass",
+        "require_sepa_iban": false,
+        "max_age_days": 90,
+        "disclose_country": false
+      },
+      "today": 20841,
+      "expected": {
+        "ok": false,
+        "failed": [
+          "not_expired",
+          "fresh_enough"
+        ]
+      }
+    },
+    {
+      "name": "too old for 30d policy",
+      "claims": {
+        "schema": "kyb-pass/0",
+        "country": "FR",
+        "eu_vat_valid": true,
+        "decision": "pass",
+        "iban_sepa": true,
+        "name_checked": true,
+        "issued_day": 20750,
+        "expires_day": 20840,
+        "rules_version": "2026-10-24.1"
+      },
+      "policy": {
+        "id": "eu-pass-sepa-30d",
+        "countries": [
+          "AT",
+          "BE",
+          "BG",
+          "CY",
+          "CZ",
+          "DE",
+          "DK",
+          "EE",
+          "EL",
+          "ES",
+          "FI",
+          "FR",
+          "HR",
+          "HU",
+          "IE",
+          "IT",
+          "LT",
+          "LU",
+          "LV",
+          "MT",
+          "NL",
+          "PL",
+          "PT",
+          "RO",
+          "SE",
+          "SI",
+          "SK"
+        ],
+        "require_decision": "pass",
+        "require_sepa_iban": true,
+        "max_age_days": 30,
+        "disclose_country": false
+      },
+      "today": 20781,
+      "expected": {
+        "ok": false,
+        "failed": [
+          "fresh_enough"
+        ]
+      }
+    },
+    {
+      "name": "no IBAN for SEPA policy",
+      "claims": {
+        "schema": "kyb-pass/0",
+        "country": "FR",
+        "eu_vat_valid": true,
+        "decision": "pass",
+        "iban_sepa": null,
+        "name_checked": true,
+        "issued_day": 20750,
+        "expires_day": 20840,
+        "rules_version": "2026-10-24.1"
+      },
+      "policy": {
+        "id": "eu-pass-sepa-30d",
+        "countries": [
+          "AT",
+          "BE",
+          "BG",
+          "CY",
+          "CZ",
+          "DE",
+          "DK",
+          "EE",
+          "EL",
+          "ES",
+          "FI",
+          "FR",
+          "HR",
+          "HU",
+          "IE",
+          "IT",
+          "LT",
+          "LU",
+          "LV",
+          "MT",
+          "NL",
+          "PL",
+          "PT",
+          "RO",
+          "SE",
+          "SI",
+          "SK"
+        ],
+        "require_decision": "pass",
+        "require_sepa_iban": true,
+        "max_age_days": 30,
+        "disclose_country": false
+      },
+      "today": 20751,
+      "expected": {
+        "ok": false,
+        "failed": [
+          "sepa_iban"
+        ]
+      }
+    },
+    {
+      "name": "non-SEPA IBAN",
+      "claims": {
+        "schema": "kyb-pass/0",
+        "country": "FR",
+        "eu_vat_valid": true,
+        "decision": "pass",
+        "iban_sepa": false,
+        "name_checked": true,
+        "issued_day": 20750,
+        "expires_day": 20840,
+        "rules_version": "2026-10-24.1"
+      },
+      "policy": {
+        "id": "eu-pass-sepa-30d",
+        "countries": [
+          "AT",
+          "BE",
+          "BG",
+          "CY",
+          "CZ",
+          "DE",
+          "DK",
+          "EE",
+          "EL",
+          "ES",
+          "FI",
+          "FR",
+          "HR",
+          "HU",
+          "IE",
+          "IT",
+          "LT",
+          "LU",
+          "LV",
+          "MT",
+          "NL",
+          "PL",
+          "PT",
+          "RO",
+          "SE",
+          "SI",
+          "SK"
+        ],
+        "require_decision": "pass",
+        "require_sepa_iban": true,
+        "max_age_days": 30,
+        "disclose_country": false
+      },
+      "today": 20751,
+      "expected": {
+        "ok": false,
+        "failed": [
+          "sepa_iban"
+        ]
+      }
+    },
+    {
+      "name": "review decision",
+      "claims": {
+        "schema": "kyb-pass/0",
+        "country": "FR",
+        "eu_vat_valid": true,
+        "decision": "review",
+        "iban_sepa": true,
+        "name_checked": true,
+        "issued_day": 20750,
+        "expires_day": 20840,
+        "rules_version": "2026-10-24.1"
+      },
+      "policy": {
+        "id": "eu-pass-90d",
+        "countries": [
+          "AT",
+          "BE",
+          "BG",
+          "CY",
+          "CZ",
+          "DE",
+          "DK",
+          "EE",
+          "EL",
+          "ES",
+          "FI",
+          "FR",
+          "HR",
+          "HU",
+          "IE",
+          "IT",
+          "LT",
+          "LU",
+          "LV",
+          "MT",
+          "NL",
+          "PL",
+          "PT",
+          "RO",
+          "SE",
+          "SI",
+          "SK"
+        ],
+        "require_decision": "pass",
+        "require_sepa_iban": false,
+        "max_age_days": 90,
+        "disclose_country": false
+      },
+      "today": 20751,
+      "expected": {
+        "ok": false,
+        "failed": [
+          "decision"
+        ]
+      }
+    },
+    {
+      "name": "fail decision",
+      "claims": {
+        "schema": "kyb-pass/0",
+        "country": "FR",
+        "eu_vat_valid": false,
+        "decision": "fail",
+        "iban_sepa": true,
+        "name_checked": true,
+        "issued_day": 20750,
+        "expires_day": 20840,
+        "rules_version": "2026-10-24.1"
+      },
+      "policy": {
+        "id": "eu-pass-90d",
+        "countries": [
+          "AT",
+          "BE",
+          "BG",
+          "CY",
+          "CZ",
+          "DE",
+          "DK",
+          "EE",
+          "EL",
+          "ES",
+          "FI",
+          "FR",
+          "HR",
+          "HU",
+          "IE",
+          "IT",
+          "LT",
+          "LU",
+          "LV",
+          "MT",
+          "NL",
+          "PL",
+          "PT",
+          "RO",
+          "SE",
+          "SI",
+          "SK"
+        ],
+        "require_decision": "pass",
+        "require_sepa_iban": false,
+        "max_age_days": 90,
+        "disclose_country": false
+      },
+      "today": 20751,
+      "expected": {
+        "ok": false,
+        "failed": [
+          "eu_vat_valid",
+          "decision"
+        ]
+      }
+    },
+    {
+      "name": "country not allowed",
+      "claims": {
+        "schema": "kyb-pass/0",
+        "country": "IT",
+        "eu_vat_valid": true,
+        "decision": "pass",
+        "iban_sepa": true,
+        "name_checked": true,
+        "issued_day": 20750,
+        "expires_day": 20840,
+        "rules_version": "2026-10-24.1"
+      },
+      "policy": {
+        "id": "fr-de-pass-disclose-country",
+        "countries": [
+          "FR",
+          "DE"
+        ],
+        "require_decision": "pass",
+        "require_sepa_iban": false,
+        "max_age_days": 180,
+        "disclose_country": true
+      },
+      "today": 20751,
+      "expected": {
+        "ok": false,
+        "failed": [
+          "country_allowed"
+        ]
+      }
+    },
+    {
+      "name": "DE allowed and disclosed",
+      "claims": {
+        "schema": "kyb-pass/0",
+        "country": "DE",
+        "eu_vat_valid": true,
+        "decision": "pass",
+        "iban_sepa": true,
+        "name_checked": true,
+        "issued_day": 20750,
+        "expires_day": 20840,
+        "rules_version": "2026-10-24.1"
+      },
+      "policy": {
+        "id": "fr-de-pass-disclose-country",
+        "countries": [
+          "FR",
+          "DE"
+        ],
+        "require_decision": "pass",
+        "require_sepa_iban": false,
+        "max_age_days": 180,
+        "disclose_country": true
+      },
+      "today": 20751,
+      "expected": {
+        "ok": true,
+        "failed": []
+      }
+    },
+    {
+      "name": "issued in the future",
+      "claims": {
+        "schema": "kyb-pass/0",
+        "country": "FR",
+        "eu_vat_valid": true,
+        "decision": "pass",
+        "iban_sepa": true,
+        "name_checked": true,
+        "issued_day": 20750,
+        "expires_day": 20840,
+        "rules_version": "2026-10-24.1"
+      },
+      "policy": {
+        "id": "eu-pass-90d",
+        "countries": [
+          "AT",
+          "BE",
+          "BG",
+          "CY",
+          "CZ",
+          "DE",
+          "DK",
+          "EE",
+          "EL",
+          "ES",
+          "FI",
+          "FR",
+          "HR",
+          "HU",
+          "IE",
+          "IT",
+          "LT",
+          "LU",
+          "LV",
+          "MT",
+          "NL",
+          "PL",
+          "PT",
+          "RO",
+          "SE",
+          "SI",
+          "SK"
+        ],
+        "require_decision": "pass",
+        "require_sepa_iban": false,
+        "max_age_days": 90,
+        "disclose_country": false
+      },
+      "today": 20749,
+      "expected": {
+        "ok": false,
+        "failed": [
+          "not_from_future"
+        ]
+      }
+    }
+  ]
+}

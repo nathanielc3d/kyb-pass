@@ -1,0 +1,7 @@
+name = "kyb-pass"
+main = "src/worker.js"
+compatibility_date = "2026-10-01"
+workers_dev = true
+preview_urls = false
+# Issuer signing key: `wrangler secret put ISSUER_JWK` (Ed25519 private JWK, generated with scripts/gen-issuer-key.mjs).
+# Without it the Worker uses an ephemeral demo key (reported at /.well-known/kyb-pass-issuer.json).

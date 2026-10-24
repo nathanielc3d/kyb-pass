@@ -1,0 +1,14 @@
+{
+  "name": "kyb-pass",
+  "version": "0.1.0",
+  "description": "Private KYB credentials for business counterparties: prove an EU company passed KYB without revealing who it is. Issuer + reference semantics; Midnight Compact contract in Wave 3.",
+  "type": "module",
+  "license": "(MIT OR Apache-2.0)",
+  "private": true,
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "vectors": "node scripts/make-vectors.mjs",
+    "deploy": "wrangler deploy"
+  }
+}
