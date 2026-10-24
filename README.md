@@ -76,8 +76,9 @@ present(policy, scope):
 | `POST /api/evaluate` `{claims, policy}` | reference policy evaluation |
 
 ```bash
+# French VIES is often busy (MS_MAX_CONCURRENT_REQ): the API then refuses to issue rather than guess.
 curl -s https://kyb-pass.moneymachine.workers.dev/api/issue -H 'content-type: application/json' \
-  -d '{"vat":"FR39356000000","holder_commitment":"0x'$(printf 'kyb-pass/holder|0x%064d' 1 | sha256sum | cut -c1-64)'"}'
+  -d '{"vat":"DE811569869","holder_commitment":"0x'$(printf 'kyb-pass/holder|0x%064d' 1 | sha256sum | cut -c1-64)'"}'
 ```
 
 ## Run it
